@@ -40,7 +40,7 @@ router.post('/', authHelpers.ensureAuthenticated, (req, res, next) => {
   req.body.user_id = req.user;
   return queries.addMovie(req.body)
   .then(() => {
-    // newrelic.recordCustomEvent('MoviesCatalog', {'ar_username': username, 'ar_title': title});
+    newrelic.recordCustomEvent('MoviesCatalog', {'ar_username': username, 'ar_title': title});
     res.json({
       status: 'success',
       data: 'Movie Added!',
