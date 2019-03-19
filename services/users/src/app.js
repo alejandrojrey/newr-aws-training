@@ -9,12 +9,12 @@ const routes = require('./routes/users');
 const app = express();
 
 var CUSTOM_PARAMETERS = {
-    'NODENAME': PROCESS.ENV.K8S_NODE_NAME,
-    'NODEIP': PROCESS.ENV.K8S_HOST_IP,
-    'PODNAME': PROCESS.ENV.K8S_POD_NAME,
-    'PODIP': PROCESS.ENV.K8S_POD_IP,
-    'NAMESPACE': PROCESS.ENV.K8S_POD_NAMESPACE,
-    'NAMESPACENAME': PROCESS.ENV.K8S_POD_NAMESPACE
+    'nodeName': process.env.K8S_NODE_NAME,
+    'nodeIP': process.env.K8S_HOST_IP,
+    'podName': process.env.K8S_POD_NAME,
+    'podIP': process.env.K8S_POD_IP,
+    'namespace': process.env.K8S_POD_NAMESPACE,
+    'namespaceName': process.env.K8S_POD_NAMESPACE
 };
 
 app.use((req, res, next) => {
