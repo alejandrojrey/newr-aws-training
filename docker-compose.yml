@@ -10,7 +10,7 @@ version: '3'
 services:
 
   users-db:
-    image: ${YOUR_GITHUB_USER}/users-db:latest
+    image: alejandrorey/users-db:latest
     container_name: users-db
     build: ./services/users/src/db
 #    ports:
@@ -20,7 +20,7 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   movies-db:
-    image: ${YOUR_GITHUB_USER}/movies-db:latest
+    image: alejandrorey/movies-db:latest
     container_name: movies-db
     build: ./services/movies/src/db
 #    ports:
@@ -30,7 +30,7 @@ services:
       - POSTGRES_PASSWORD=postgres
 
   users-service:
-    image: ${YOUR_GITHUB_USER}/users-service:latest
+    image: alejandrorey/users-service:latest
     container_name: users-service
     build: ./services/users/
     ports:
@@ -46,7 +46,7 @@ services:
       - users-db
 
   movies-service:
-    image: ${YOUR_GITHUB_USER}/movies-service:latest
+    image: alejandrorey/movies-service:latest
     container_name: movies-service
     build: ./services/movies/
     ports:
@@ -65,7 +65,7 @@ services:
       - users-service
 
   web-service:
-    image: ${YOUR_GITHUB_USER}/web-service:latest
+    image: alejandrorey/web-service:latest
     container_name: web-service
     build: ./services/web/
     ports:
