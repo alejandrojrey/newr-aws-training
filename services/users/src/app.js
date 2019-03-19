@@ -8,7 +8,7 @@ const routes = require('./routes/users');
 
 const app = express();
 
-VAR CUSTOM_PARAMETERS = {
+var CUSTOM_PARAMETERS = {
     'NODENAME': PROCESS.ENV.K8S_NODE_NAME,
     'NODEIP': PROCESS.ENV.K8S_HOST_IP,
     'PODNAME': PROCESS.ENV.K8S_POD_NAME,
